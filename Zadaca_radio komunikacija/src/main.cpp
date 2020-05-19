@@ -17,10 +17,11 @@ StateType state = READ_SERIAL;
 void setup()
 {
   Serial.begin(115200);
-  sensor.DHT_init();
-  sensor.BH1750_init();
+ // sensor.DHT_init();
+ // sensor.BH1750_init();
 
   radioNRF.nRF_init();
+  delay(100);
 }
 
 void loop()
