@@ -12,7 +12,7 @@ typedef enum
 {
     READ_SERIAL,
     READ_SENSORS,
-   
+   SLEEP_STATE,
     RADIO_TX,
   
     //novi

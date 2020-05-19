@@ -50,6 +50,18 @@ void loop()
         Serial.println(F("primanje"));
         radioNRF.RF_receive(rslt);
       
-        break;
+       state = SLEEP_STATE;
+
+    break;
+
+  case SLEEP_STATE:
+
+    delay(50);
+    LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF);
+    delay(50);
+
+    state = READ_SERIAL;
+    break;
+        
   }
 }
