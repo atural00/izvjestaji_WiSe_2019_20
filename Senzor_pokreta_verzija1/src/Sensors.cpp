@@ -10,7 +10,7 @@ SENSORS::~SENSORS() {}
 byte SENSORS::procitaj()
 {
   byte x;
-  x=digitalRead(2);
+  x=digitalRead(9);
   return x;
   }
 

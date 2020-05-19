@@ -36,9 +36,10 @@ void loop()
     dataToSend.pokret_rukom=sensor.procitaj();
 
  Serial.println(F("Pokret"));
+
       state=RADIO_TX;
       break;
-       case RADIO_SLANJE:
+       case RADIO_TX:
         Serial.println(F("slanje"));
         radioNRF.nRF_init();
         delay(100);
