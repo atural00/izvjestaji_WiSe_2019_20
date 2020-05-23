@@ -16,6 +16,8 @@ public:
     void nRF_init();
     bool RF_send(struct SensorData sensorData);
     void RF_receive(bool);
+    void RF_powerDown();
+    void RF_powerUp();
 };
 
 #endif

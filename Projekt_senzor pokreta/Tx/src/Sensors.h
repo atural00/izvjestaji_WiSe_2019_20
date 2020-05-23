@@ -1,11 +1,9 @@
 #ifndef Sensors_h
 #define Sensors_h
-
 #include <Arduino.h>
-
-//novi kodovi
-
 #include <LowPower.h>
+#include <avr/interrupt.h>        
+#include <avr/sleep.h>            
 
 class SENSORS
 {
@@ -15,6 +13,8 @@ public:
 
 //novi kodovi
      byte procitaj();
+  void Hibernate();
+       
 
 };
 

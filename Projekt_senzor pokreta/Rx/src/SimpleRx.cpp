@@ -1,4 +1,3 @@
-// SimpleRx - the slave or the receiver
 
 #include <Arduino.h>
 #include <SPI.h>
@@ -14,11 +13,6 @@ RF24 radio(CE_PIN, CSN_PIN);
 
 struct SensorData
 {
-  //float temp;
- //float hum;
-  //uint16_t lightLevel;
-
-  //novi kod
   byte pokret_rukom;
 };
 
@@ -28,7 +22,6 @@ bool newData = false;
 
 void getData();
 void showData();
-
 void setup()
 {
 
@@ -37,7 +30,7 @@ void setup()
   Serial.println(F("SimpleRx Starting"));
   radio.begin();
   radio.setDataRate(RF24_250KBPS);
-  radio.setChannel(111);
+  radio.setChannel(112);
   radio.setPALevel(RF24_PA_MAX);
   radio.openReadingPipe(1, address[0]);
   radio.openReadingPipe(2, address[1]);
@@ -70,14 +63,10 @@ void showData()
 {
   if (newData == true)
   {
-   // Serial.println("Received data");
-    //Serial.print("Humidity: ");
-    //Serial.println(dataReceived.hum);
-   // Serial.print("Temperature: ");
-    //Serial.println(dataReceived.temp);
-    //Serial.print("Light: ");
-    //Serial.println(dataReceived.lightLevel);
-    Serial.println(dataReceived.pokret_rukom);
+    Serial.print("P: ");
+    Serial.print(dataReceived.pokret_rukom);
+    Serial.println("!");
     newData = false;
   }
 }
+
